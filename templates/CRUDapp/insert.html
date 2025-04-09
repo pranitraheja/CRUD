@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends 'CRUDapp/parents.html' %}
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    {% block for_child %}
+    <center>
+        <h1>Insertion Forms</h1>
+        <form method="POST">
+        {{forms.as_p}}
+        {% csrf_token %}
+        <input type="submit" value="Insert a new record">
+        </form>
+    {% endblock %}
+    </center>
+</body>
+</html>

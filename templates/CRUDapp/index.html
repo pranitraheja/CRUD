@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Database</title>
+</head>
+<body>
+    {% block for_child %}
+    <center>
+    <h1>Student Database</h1>
+    <table>
+        <table border="2px">
+            <tr>
+                <td><b>Name</b></td>
+                <td><b>Rollno</b></td>
+                <td><b>Marks</b></td>
+                <td><b>Address</b></td>
+                <td><b>Phoneno</b></td>  
+            </tr>
+            {% for i in Stud %}
+            <tr>
+                <td>{{i.name}}</td>
+                <td>{{i.rollno}}</td>
+                <td>{{i.marks}}</td>
+                <td>{{i.addr}}</td>
+                <td>{{i.phno}}</td>
+                <td><a href="/update/{{i.id}}">Update</a></td>
+                <td><a href="/delete/{{i.id}}">Delete</a></td>
+            {% endfor %}
+            </table>
+            <br>
+            <br>
+            <td><a href="/insert/{{i.id}}">Do you want to insert a new record</a></td>
+            
+            {%endblock%}
+        </tr>            
+        </center>
+</body>
+</html>
