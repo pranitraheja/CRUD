@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends "myapp/parent.html" %}
+<html>
+<head>
+    <title>Student Database</title>
+</head>
+<body>
+    {%block for_child%}
+    <center>
+        <h1>Insertion Form</h1>
+        <form method="POST">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit" value="submit">
+        </form>
+    {% endblock %}
+    </center>
+</body>
+</html>

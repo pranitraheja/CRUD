@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% extends "myapp/parent.html" %}
+<html>
+<head>
+    <title>Student Database</title>
+</head>
+<body>
+    {%block for_child%}
+    <center>
+        <h1>Student Database</h1>
+        <div>
+            <table border=2px solid black>
+                <tr>
+                    <td>Name</td>
+                    <td>age</td>
+                    <td>emailid</td>
+                    <td>marks</td>
+                    <td>phno</td>
+                </tr>
+            </div>
+                {% for i in Stud %}
+                <tr>
+                    <td>{{i.name}}</td>
+                    <td>{{i.age}}</td>
+                    <td>{{i.emailid}}</td>
+                    <td>{{i.marks}}</td>
+                    <td>{{i.phno}}</td>
+                    <td><a href="/update/{{i.id}}">Update</a></td>
+                    <td><a href="/delete/{{i.id}}">Delete</a></td>  
+                {% endfor %}
+                </table>  
+                <br>
+                <td><a href="/insert/{{i.id}}}">Insert</a></td>
+                {% endblock %}
+            </tr>
+        </center>
+</body>
+</html>
